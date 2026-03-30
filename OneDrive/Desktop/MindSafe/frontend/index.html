@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="style.css">
+<script src="../backend/mockApi.js"></script>
+<script src="app.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindSafe</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login" class="container">
+  <h2>MindSafe</h2>
+  <input id="loginUser" placeholder="Pseudonym">
+  <input id="loginPass" type="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p class="small" onclick="show('signup')">Create account</p>
+</div>
+
+<!-- SIGNUP -->
+<div id="signup" class="container hidden">
+  <h2>Create Account</h2>
+  <input id="user" placeholder="Pseudonym">
+  <input id="pass" type="password" placeholder="Password (min 6)">
+  <button onclick="signup()">Create Account</button>
+  <p id="recovery" class="small"></p>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="hidden">
+
+<nav>
+  <button onclick="showTab('therapists')">Therapists</button>
+  <button onclick="showTab('book')">Book</button>
+  <button onclick="showTab('sessions')">Sessions</button>
+  <button onclick="showTab('crisis')">Help</button>
+</nav>
+
+<div class="container">
+
+<!-- THERAPISTS -->
+<div id="therapists">
+  <h3>Find a Therapist</h3>
+
+  <select id="filter" onchange="loadTherapists()">
+    <option value="">All</option>
+    <option value="Anxiety">Anxiety</option>
+    <option value="Trauma">Trauma</option>
+  </select>
+
+  <div id="list"></div>
+</div>
+
+<!-- BOOK -->
+<div id="book" class="hidden">
+  <h3>Book Session</h3>
+
+  <select id="therapistSelect"></select>
+
+  <select id="type">
+    <option>Text Chat</option>
+    <option>Audio Call</option>
+    <option>Video Call</option>
+  </select>
+
+  <input type="date" id="date">
+
+  <button onclick="confirmBooking()">Continue</button>
+
+  <div id="paymentBox" class="hidden">
+    <h4>Payment</h4>
+    <input placeholder="+2507XXXXXXXX">
+    <button onclick="pay()">Pay</button>
+  </div>
+</div>
+
+<!-- SESSIONS -->
+<div id="sessions" class="hidden">
+  <h3>My Sessions</h3>
+  <div id="sessionList"></div>
+</div>
+
+<!-- CRISIS -->
+<div id="crisis" class="hidden">
+  <h3>Need Immediate Help?</h3>
+  <p>This platform is not for emergencies.</p>
+  <div class="card">
+    Rwanda Hotline: 114
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- Scripts -->
+<script src="../backend/mockApi.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
