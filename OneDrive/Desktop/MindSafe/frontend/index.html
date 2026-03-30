@@ -15,7 +15,7 @@
   <h2>MindSafe</h2>
   <input id="loginUser" placeholder="Pseudonym">
   <input id="loginPass" type="password" placeholder="Password">
-  <button onclick="login()">Login</button>
+  <button class="full-btn" onclick="login()">Login</button>
   <p class="small" onclick="show('signup')">Create account</p>
 </div>
 
@@ -24,7 +24,7 @@
   <h2>Create Account</h2>
   <input id="user" placeholder="Pseudonym">
   <input id="pass" type="password" placeholder="Password (min 6)">
-  <button onclick="signup()">Create Account</button>
+  <button class="full-btn" onclick="signup()">Create Account</button>
   <p id="recovery" class="small"></p>
 </div>
 
@@ -67,12 +67,12 @@
 
   <input type="date" id="date">
 
-  <button onclick="confirmBooking()">Continue</button>
+  <button class="full-btn" onclick="confirmBooking()">Continue</button>
 
   <div id="paymentBox" class="hidden">
     <h4>Payment</h4>
     <input placeholder="+2507XXXXXXXX">
-    <button onclick="pay()">Pay</button>
+    <button class="full-btn" onclick="pay()">Pay</button>
   </div>
 </div>
 
